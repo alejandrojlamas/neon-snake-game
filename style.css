@@ -1,0 +1,138 @@
+:root {
+  color-scheme: dark;
+  font-family: "Courier New", Courier, monospace;
+  background: #03020a;
+  color: #ecfff5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 32px 16px;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at top, rgb(91 32 128 / 35%), transparent 42%),
+    #03020a;
+}
+
+.game-shell {
+  width: min(100%, 520px);
+  text-align: center;
+}
+
+.game-header h1 {
+  margin: 6px 0 8px;
+  color: #39ff88;
+  font-size: clamp(2rem, 8vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  text-shadow: 0 0 18px rgb(57 255 136 / 70%);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #ff3cac;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.subtitle,
+.controls p {
+  color: #b8b1c8;
+  line-height: 1.5;
+}
+
+.hud {
+  min-height: 62px;
+  margin: 24px 0 12px;
+  padding: 10px 14px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(57 255 136 / 35%);
+  background: rgb(8 7 20 / 85%);
+  text-align: left;
+}
+
+.hud p {
+  margin: 0;
+}
+
+#score {
+  color: #39ff88;
+  font-weight: 700;
+}
+
+#status {
+  color: #ddd6e9;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+#game-container {
+  overflow: hidden;
+  border: 3px solid #ff3cac;
+  border-radius: 4px;
+  box-shadow:
+    0 0 18px rgb(255 60 172 / 55%),
+    0 0 42px rgb(57 255 136 / 22%);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #03020a;
+  outline: none;
+}
+
+canvas:focus-visible {
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  border: 1px solid #39ff88;
+  border-radius: 3px;
+  padding: 10px 16px;
+  background: transparent;
+  color: #39ff88;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+  background: #39ff88;
+  color: #03020a;
+  outline: none;
+  box-shadow: 0 0 18px rgb(57 255 136 / 55%);
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 12px;
+  }
+
+  .hud {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  #status {
+    text-align: left;
+  }
+}
